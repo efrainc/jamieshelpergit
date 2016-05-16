@@ -1,0 +1,4 @@
+BeautifulSoup==3.2.1
+Django==1.9.6
+requests==2.10.0
+wsgiref==0.1.2
