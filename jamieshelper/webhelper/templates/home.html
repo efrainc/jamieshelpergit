@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+    <head>
+        <title>My Home Page</title>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" media="screen" />
+
+    </head>
+    <body>
+        <p>Jamie's Helper</p>
+        <form  action="" method="POST" >{% csrf_token %}
+            <input type="text" name="Street Address" placeholder="street Address">
+            <input type="text" name="City" placeholder="city">
+            <input type="text" name="State" placeholder="state">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    {% block content %}
+
+    {% if urls_list %}
+        <ul>
+        {% for url in urls_list %}
+            <li>{{ url }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No urls</p>
+    {% endif %}
+
+    {% endblock %}
+    </body>
+</html>
